@@ -38,7 +38,7 @@ So far I have had great success with the sleep coach, but I only have a sample s
 
 ### Hardware
 
-* AtTiny85
+* ATtiny85
 * 8 pin DIP socket (recommended)
 * 1-sided copper board
 * 330Ω resistor
@@ -46,6 +46,15 @@ So far I have had great success with the sleep coach, but I only have a sample s
 * 4 red LEDs
 * Tact button
 * Wheel potentiometer
+* Battery holder for 2 AA batteries
+
+For my version of the mechanical design:
+
+* 3.5" 1/4-20 bolt
+* 1/4-20 wing nut
+* 8 inches of 1.5" x .75" wood
+
+Details on mechanical design to come soon
 
 ### Schematics
 
@@ -55,6 +64,6 @@ See the included Fritzing diagram (.fzz file) for details.
 
 ### License
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">MAX7219 Board Schematics</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jerwil/SleepCoach" property="cc:attributionName" rel="cc:attributionURL">Jeremy Wilson</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">MAX7219 Board Schematics</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="www.JeremyAdamWilson.com" property="cc:attributionName" rel="cc:attributionURL">Jeremy Wilson</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
 
