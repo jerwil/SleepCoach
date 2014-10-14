@@ -180,6 +180,12 @@ if (x*k >= 2*3.14159){x=0;}
 
 if (button_state == 0){button_counter = 0;}
 
+if (button_counter >= 3){ // If the user holds the button for 3 seconds, start the sleep coach
+button_pushed = 0;
+mode = "strobe";
+button_counter = 0;
+}
+
 if (button_pushed == 1 && current_time > 5){ // Turn the device off by pushing the button, but do not create false press after starting
 mode = "off";
 button_pushed = 0;
@@ -189,6 +195,21 @@ time_choice = 0;
 x = 3*3.14159/2/k; // Start it back at 0 brightness
 }
 
+}
+
+if (mode == "strobe"){
+blink_time = 100;
+if (tick(blink_time,blink_timer) == 1){
+ if (blink == 1){blink = 0;}
+ else if (blink == 0){blink = 1;}
+}
+blink_value = max_brightness;
+
+if (blink == 0){  
+blink_value = 0;
+}
+
+analogWrite(LEDPin, blink_value);
 }
 
 if (mode == "off"){
