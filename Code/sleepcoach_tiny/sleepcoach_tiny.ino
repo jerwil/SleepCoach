@@ -55,6 +55,7 @@ double k = 0.00108*5;
 double k_initial = 0.00108*5;
 double k_final = 0.00065;
 double x = 3*3.14159/2/k; // This starts it at 0 brightness
+double breath_length; // The user determined breath length
 
 double total_time = 420; // seconds for entire breathing coaching
 double current_time = 0;
@@ -197,19 +198,16 @@ x = 3*3.14159/2/k; // Start it back at 0 brightness
 
 }
 
-if (mode == "strobe"){
-blink_time = 100;
-if (tick(blink_time,blink_timer) == 1){
- if (blink == 1){blink = 0;}
- else if (blink == 0){blink = 1;}
-}
-blink_value = max_brightness;
-
-if (blink == 0){  
-blink_value = 0;
+if (mode == "strobe"){  
+breath_length = (pot_val-50)/(1024/10);
+k = pow(breath_length,3)*-0.000004166667+pow(breath_length,2)*0.000175000000+breath_length*-0.002583333333+0.015500000000;
+brightness = 127*(1 + sin(k*x));  
+if (tick(delay_int,second_timer) == 1){
+  x += brightincrease;
 }
 
-analogWrite(LEDPin, blink_value);
+analogWrite(LEDPin,brightness);
+
 }
 
 if (mode == "off"){
