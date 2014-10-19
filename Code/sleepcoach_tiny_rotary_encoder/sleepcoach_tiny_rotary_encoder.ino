@@ -1,4 +1,5 @@
 #include <math.h>
+#include <EEPROM.h>
 #include <avr/sleep.h>
 
 // Sleep coach using ATtiny85
@@ -15,7 +16,8 @@
 #endif
 
 
-char* mode = "time_choose"; // Modes are time_choose, sleep_coach, and off
+
+char* mode = "initialize"; // Modes are time_choose, sleep_coach, and off
 // Time choose mode is where the user choses between 7, 14, 21, and 28 minutes of sleep coaching
 // sleep coach mode is the mode with pulsating light
 // off is when the sleep coaching is complete. A button press will bring it into time choose mode
@@ -69,6 +71,8 @@ double breath_length = 6; // The user determined breath length
 
 double k_delta = .0002; // The amount of change in k for each rotary encoder tick
 
+double k_values[8] = {.0054, .0054, .0054, .0054, .003, .0025, .0022, .0019}; // {k1_initial, k2_initial, k3_initial, k4_initial, k1_final, k2_final, k3_final, k4_final}
+
 double k1_initial = .0054; // 6 seconds
 double k2_initial = .0054;
 double k3_initial = .0054;
@@ -77,6 +81,10 @@ double k1_final = .003;  // 10 seconds
 double k2_final = .0025; // 12 seconds
 double k3_final = .0022; //14 seconds
 double k4_final = .0019; //16 seconds
+
+int eepromwrite = 200;
+
+int val = 200; // Current value read from EEPROM
 
 double total_time = 420; // seconds for entire breathing coaching
 double current_time = 0;
@@ -94,11 +102,37 @@ void setup() {
   
   sbi(GIMSK,PCIE); // Turn on Pin Change interrupt
   sbi(PCMSK,PCINT1); // Which pins are affected by the interrupt
-//  Serial.begin(9600);  
+//  Serial.begin(9600); 
+
+
 }
 
 
 void loop() {
+  
+if (mode == "initialize"){
+ 
+if (EEPROM.read(8) == 1){
+
+for (int i = 0; i < 8; i++){
+  val = EEPROM.read(i);
+  k_values[i] = val;
+  k_values[i] = k_values[i]/10000;
+}
+}
+
+else {
+  for (int i = 0; i < 512; i++)
+    EEPROM.write(i, 0);
+  for (int i = 0; i < 8; i++){
+  EEPROM.write(i,54);
+  }
+    EEPROM.write(8,1);
+}
+  
+mode = "time_choose";
+}
+  
     clockwise = 0;
     counterclockwise = 0;
     encoder_A = digitalRead(pin_A);    // Read encoder pins
@@ -114,7 +148,7 @@ void loop() {
       else {
         // B is low so counter-clockwise      
         // decrease the brightness, dont go below 0
-        if(brightness_mult - fadeAmount >= 0) brightness_mult -= fadeAmount;
+        if(brightness_mult - fadeAmount >= 2) brightness_mult -= fadeAmount;
          counterclockwise = 1;        
       } 
     }
@@ -125,6 +159,8 @@ button_state = digitalRead(ButtonPin);
 button_pushed = button_press (button_state, button_press_initiate, button_press_completed);
   
 if (mode == "time_choose"){
+  
+x = 0;
   
 //delay(10);
 
@@ -182,25 +218,24 @@ mode = "sleep_coach";
 button_counter = 0;
 
   if (profile == 1){
-    k_initial = k1_initial;
-    k_final = k1_final; // Equates to 10 second breath cycle
+
     total_time = 420;
   }
   if (profile == 2){
-    k_initial = k2_initial;
-    k_final = k2_final; // Equates to 12 second breath cycle
+
     total_time = 840;
   }
   if (profile == 3){
-    k_initial = k3_initial;
-    k_final = k3_final; // Equates to 14 second breath cycle
+
     total_time = 1260;
   }
   if (profile == 4){
-    k_initial = k4_initial;
-    k_final = k4_final; // Equates to 16 second breath cycle
+
     total_time = 1680;
   }
+
+k_initial = k_values[profile-1];
+k_final = k_values[profile+3];
 
 }
 
@@ -253,6 +288,13 @@ x = 3*3.14159/2/k; // Start it back at 0 brightness
 }
 
 if (mode == "to_initial_adjust"){
+  
+x = 0;
+  
+button_pushed = 0;
+  
+// Flash LED 5 times
+  
 analogWrite(LEDPin,244);
 delay(100);               
 analogWrite(LEDPin,0);
@@ -278,8 +320,18 @@ mode = "initial_adjust";
 
 if (mode == "initial_adjust"){
 
-if (counterclockwise == 1){if(k + k_delta <= .01) {k += k_delta;}}
-if (clockwise == 1){if(k - k_delta >= .0019) k -= k_delta;}
+// Adjusts the initial breath length of the currently selected profile
+  
+if (counterclockwise == 1)
+  {if(k + k_delta <= .01) 
+    {k += k_delta;
+    timeout = 0;}
+  }
+else if (clockwise == 1)
+  {if(k - k_delta >= .0019) 
+    {k -= k_delta;
+    timeout = 0;}
+  }
 //k = pow(breath_length,3)*-0.000004166667+pow(breath_length,2)*0.000175000000+breath_length*-0.002583333333+0.015500000000;
 brightness = 127*(1 + sin(k*x));  
 if (tick(delay_int,second_timer) == 1){
@@ -290,9 +342,163 @@ if (x*k >= 2*3.14159){x=0;}
 
 analogWrite(LEDPin,brightness);
 
+if (tick(1000,blink_timer) == 1){
+timeout += 1;
+if (button_state == 1){button_counter += 1;}
 }
 
+if (button_state == 0){button_counter = 0;}
+
+if (button_counter >= 3){ // If the user holds the button for 3 seconds, start the sleep coach
+button_pushed = 0;
+mode = "to_final_adjust";
+button_counter = 0;
+timeout = 0;
+}
+
+if (button_state == 1){
+timeout = 0;
+}
+
+if (timeout >= timeout_setting){
+mode = "off";
+timeout = 0;
+}
+
+}
+
+if (mode == "to_final_adjust"){
+  
+x = 0;
+  
+//  if (profile == 1){
+//    k1_initial = k;
+//  }
+//  if (profile == 2){
+//    k2_initial = k;
+//  }
+//  if (profile == 3){
+//    k3_initial = k;
+//  }
+//  if (profile == 4){
+//    k4_initial = k;
+//  }
+//
+//eepromwrite = k1_initial*10000 ; 
+//EEPROM.write(0, eepromwrite);
+//eepromwrite = k2_initial*10000 ; 
+//EEPROM.write(1, eepromwrite);
+//eepromwrite = k3_initial*10000 ; 
+//EEPROM.write(2, eepromwrite);
+//eepromwrite = k4_initial*10000 ; 
+//EEPROM.write(3, eepromwrite);
+
+k_values[profile-1] = k;
+val = k*10000;
+EEPROM.write(profile-1,val);
+EEPROM.write(8, 1);
+  
+// Flash LED 3 times
+  
+analogWrite(LEDPin,244);
+delay(100);               
+analogWrite(LEDPin,0);
+delay(100);
+analogWrite(LEDPin,244);
+delay(100);               
+analogWrite(LEDPin,0);
+delay(100);        
+analogWrite(LEDPin,244);
+delay(100);               
+analogWrite(LEDPin,0);
+delay(100);
+mode = "final_adjust";
+}
+
+
+if (mode == "final_adjust"){
+
+// Adjusts the final breath length of the currently selected profile
+  
+if (counterclockwise == 1)
+  {if(k + k_delta <= .01) 
+    {k += k_delta;
+    timeout = 0;}
+  }
+else if (clockwise == 1)
+  {if(k - k_delta >= .0019) 
+    {k -= k_delta;
+    timeout = 0;}
+  }
+
+brightness = 127*(1 + sin(k*x));  
+if (tick(delay_int,second_timer) == 1){
+  x += brightincrease;
+}
+
+if (x*k >= 2*3.14159){x=0;}
+
+analogWrite(LEDPin,brightness);
+
+
+if (tick(1000,blink_timer) == 1){
+timeout += 1;
+if (button_state == 1){button_counter += 1;}
+}
+
+if (button_state == 0){button_counter = 0;}
+
+if (button_counter >= 3){ // If the user holds the button for 3 seconds, start the sleep coach
+button_pushed = 0;
+mode = "time_choose";
+button_counter = 0;
+timeout = 0;
+
+//  if (profile == 1){
+//    k1_final = k;
+//  }
+//  if (profile == 2){
+//    k2_final = k;
+//  }
+//  if (profile == 3){
+//    k3_final = k;
+//  }
+//  if (profile == 4){
+//    k4_final = k;
+//  }
+//  
+//eepromwrite = k1_final*10000 ; 
+//EEPROM.write(4, eepromwrite);
+//eepromwrite = k2_final*10000 ; 
+//EEPROM.write(5, eepromwrite);
+//eepromwrite = k3_final*10000 ; 
+//EEPROM.write(6, eepromwrite);
+//eepromwrite = k4_final*10000 ; 
+//EEPROM.write(7, eepromwrite);
+
+k_values[profile+3] = k;
+val = k*10000;
+EEPROM.write(profile+3,val);
+EEPROM.write(8, 1);
+
+}
+
+if (button_state == 1){
+timeout = 0;
+}
+
+if (timeout >= timeout_setting){
+mode = "off";
+timeout = 0;
+}
+
+}
+
+
+
 if (mode == "off"){
+  
+x = 0;
 
 analogWrite(LEDPin,  0);  
   
