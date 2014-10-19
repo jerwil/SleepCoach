@@ -289,33 +289,12 @@ x = 3*3.14159/2/k; // Start it back at 0 brightness
 
 if (mode == "to_initial_adjust"){
   
-x = 0;
-  
-button_pushed = 0;
-  
-// Flash LED 5 times
-  
-analogWrite(LEDPin,244);
-delay(100);               
-analogWrite(LEDPin,0);
-delay(100);
-analogWrite(LEDPin,244);
-delay(100);               
-analogWrite(LEDPin,0);
-delay(100);        
-analogWrite(LEDPin,244);
-delay(100);               
-analogWrite(LEDPin,0);
-delay(100);
-analogWrite(LEDPin,244);
-delay(100);               
-analogWrite(LEDPin,0);
-delay(100);
-analogWrite(LEDPin,244);
-delay(100);               
-analogWrite(LEDPin,0);
-delay(100);      
-mode = "initial_adjust";
+  x = 0;
+  button_pushed = 0;
+  flash_led(LEDPin, 5, 100);
+  k = k_values[profile-1];
+  mode = "initial_adjust";
+
 }
 
 if (mode == "initial_adjust"){
@@ -370,49 +349,14 @@ timeout = 0;
 if (mode == "to_final_adjust"){
   
 x = 0;
-  
-//  if (profile == 1){
-//    k1_initial = k;
-//  }
-//  if (profile == 2){
-//    k2_initial = k;
-//  }
-//  if (profile == 3){
-//    k3_initial = k;
-//  }
-//  if (profile == 4){
-//    k4_initial = k;
-//  }
-//
-//eepromwrite = k1_initial*10000 ; 
-//EEPROM.write(0, eepromwrite);
-//eepromwrite = k2_initial*10000 ; 
-//EEPROM.write(1, eepromwrite);
-//eepromwrite = k3_initial*10000 ; 
-//EEPROM.write(2, eepromwrite);
-//eepromwrite = k4_initial*10000 ; 
-//EEPROM.write(3, eepromwrite);
-
 k_values[profile-1] = k;
 val = k*10000;
 EEPROM.write(profile-1,val);
-EEPROM.write(8, 1);
-  
-// Flash LED 3 times
-  
-analogWrite(LEDPin,244);
-delay(100);               
-analogWrite(LEDPin,0);
-delay(100);
-analogWrite(LEDPin,244);
-delay(100);               
-analogWrite(LEDPin,0);
-delay(100);        
-analogWrite(LEDPin,244);
-delay(100);               
-analogWrite(LEDPin,0);
-delay(100);
+EEPROM.write(8, 1);  
+flash_led(LEDPin, 3, 100);
 mode = "final_adjust";
+k = k_values[profile+3];
+
 }
 
 
@@ -450,31 +394,9 @@ if (button_state == 0){button_counter = 0;}
 
 if (button_counter >= 3){ // If the user holds the button for 3 seconds, start the sleep coach
 button_pushed = 0;
-mode = "time_choose";
+mode = "back_to_menu";
 button_counter = 0;
 timeout = 0;
-
-//  if (profile == 1){
-//    k1_final = k;
-//  }
-//  if (profile == 2){
-//    k2_final = k;
-//  }
-//  if (profile == 3){
-//    k3_final = k;
-//  }
-//  if (profile == 4){
-//    k4_final = k;
-//  }
-//  
-//eepromwrite = k1_final*10000 ; 
-//EEPROM.write(4, eepromwrite);
-//eepromwrite = k2_final*10000 ; 
-//EEPROM.write(5, eepromwrite);
-//eepromwrite = k3_final*10000 ; 
-//EEPROM.write(6, eepromwrite);
-//eepromwrite = k4_final*10000 ; 
-//EEPROM.write(7, eepromwrite);
 
 k_values[profile+3] = k;
 val = k*10000;
@@ -494,6 +416,15 @@ timeout = 0;
 
 }
 
+if (mode == "back_to_menu"){
+  
+x = 0;  
+flash_led(LEDPin, 10, 100);
+button_pushed = 0;
+button_counter = 0;
+mode = "time_choose";
+
+}
 
 
 if (mode == "off"){
@@ -544,6 +475,17 @@ else {return 0;}
 void tick_reset(double timekeeper[1]){
 currentTime = millis();
 timekeeper[0] = currentTime;
+}
+
+void flash_led(int pin, int times_to_flash, int wait_time){
+  int i = 0;
+  while (i <= times_to_flash){
+  analogWrite(pin,244);
+  delay(wait_time);               
+  analogWrite(pin,0);
+  delay(wait_time);
+  i++;
+  }
 }
 
 void system_sleep() {
