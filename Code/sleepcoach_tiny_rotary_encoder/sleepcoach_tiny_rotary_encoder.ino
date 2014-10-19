@@ -20,7 +20,7 @@ char* mode = "time_choose"; // Modes are time_choose, sleep_coach, and off
 // sleep coach mode is the mode with pulsating light
 // off is when the sleep coaching is complete. A button press will bring it into time choose mode
 
-int time_choice = 7;
+int profile = 1;
 
 const int LEDPin = 0;
 const int pin_A = 3;  // pin 12
@@ -52,6 +52,9 @@ double second_timer[1] = {0}; // This is used to keep track of the timer used to
 double blink_timer[1] = {0};  // This is used to keep track of each half second for blinking
 int ticked = 0;
 
+int clockwise = 0;
+int counterclockwise = 0;
+
 int delay_int = 1;
 int brightness = 0;
 int max_brightness = 244;
@@ -60,7 +63,20 @@ double k = 0.00108*5;
 double k_initial = 0.00108*5;
 double k_final = 0.00065;
 double x = 3*3.14159/2/k; // This starts it at 0 brightness
-double breath_length; // The user determined breath length
+double breath_length = 6; // The user determined breath length
+
+// K-factors - these are used in the sine wave generation portion to change the period of the sine wave. (a k of .0054 corresponds to 6 second breath, a k of .001 corresponds to an 18 second breath) //
+
+double k_delta = .0002; // The amount of change in k for each rotary encoder tick
+
+double k1_initial = .0054; // 6 seconds
+double k2_initial = .0054;
+double k3_initial = .0054;
+double k4_initial = .0054;
+double k1_final = .003;  // 10 seconds
+double k2_final = .0025; // 12 seconds
+double k3_final = .0022; //14 seconds
+double k4_final = .0019; //16 seconds
 
 double total_time = 420; // seconds for entire breathing coaching
 double current_time = 0;
@@ -83,20 +99,23 @@ void setup() {
 
 
 void loop() {
-  
+    clockwise = 0;
+    counterclockwise = 0;
     encoder_A = digitalRead(pin_A);    // Read encoder pins
     encoder_B = digitalRead(pin_B);   
     if((!encoder_A) && (encoder_A_prev)){
       // A has gone from high to low 
       if(encoder_B) {
         // B is high so clockwise
-        // increase the brightness, dont go over 255
+        // increase the brightness multiplier, dont go over 25
+        clockwise = 1;
         if(brightness_mult + fadeAmount <= 25) brightness_mult += fadeAmount;               
       }   
       else {
         // B is low so counter-clockwise      
         // decrease the brightness, dont go below 0
-        if(brightness_mult - fadeAmount >= 0) brightness_mult -= fadeAmount;               
+        if(brightness_mult - fadeAmount >= 0) brightness_mult -= fadeAmount;
+         counterclockwise = 1;        
       } 
     }
 encoder_A_prev = encoder_A;  
@@ -110,32 +129,24 @@ if (mode == "time_choose"){
 //delay(10);
 
 if (button_pushed == 1){
-time_choice += 7;
+profile += 1;
 button_pushed = 0;
 }
-if (time_choice > 28){
-time_choice = 0;
+if (profile > 4){
+profile = 0;
 mode = "off";
 }
   
-  if (time_choice == 7){
-    k_final = .003; // Equates to 10 second breath cycle
-    total_time = 420;
+  if (profile == 1){
     blink_time = 250;
   }
-  if (time_choice == 14){
-    k_final = .0025; // Equates to 12 second breath cycle
-    total_time = 840;
+  if (profile == 2){
     blink_time = 500;
   }
-  if (time_choice == 21){
-    k_final = .0022; // Equates to 14 second breath cycle
-    total_time = 1260;
+  if (profile == 3){
     blink_time = 750;
   }
-  if (time_choice == 28){
-    k_final = .0019; // Equates to 16 second breath cycle
-    total_time = 1680;
+  if (profile == 4){
     blink_time = 1000;
   }
  
@@ -169,6 +180,28 @@ if (button_counter >= 3){ // If the user holds the button for 3 seconds, start t
 button_pushed = 0;
 mode = "sleep_coach";
 button_counter = 0;
+
+  if (profile == 1){
+    k_initial = k1_initial;
+    k_final = k1_final; // Equates to 10 second breath cycle
+    total_time = 420;
+  }
+  if (profile == 2){
+    k_initial = k2_initial;
+    k_final = k2_final; // Equates to 12 second breath cycle
+    total_time = 840;
+  }
+  if (profile == 3){
+    k_initial = k3_initial;
+    k_final = k3_final; // Equates to 14 second breath cycle
+    total_time = 1260;
+  }
+  if (profile == 4){
+    k_initial = k4_initial;
+    k_final = k4_final; // Equates to 16 second breath cycle
+    total_time = 1680;
+  }
+
 }
 
 if (timeout >= timeout_setting){mode = "off";}
@@ -181,7 +214,7 @@ timeout = 0;
   
 if (current_time >= total_time && brightness <= 10){
 current_time = 0;
-time_choice = 0;
+profile = 0;
 mode = "off";
 x = 0;
 }
@@ -204,7 +237,7 @@ if (button_state == 0){button_counter = 0;}
 
 if (button_counter >= 3){ // If the user holds the button for 3 seconds, start the sleep coach
 button_pushed = 0;
-mode = "strobe";
+mode = "to_initial_adjust";
 button_counter = 0;
 }
 
@@ -213,17 +246,47 @@ mode = "off";
 button_pushed = 0;
 button_counter = 0;
 current_time = 0;
-time_choice = 0;
+profile = 0;
 x = 3*3.14159/2/k; // Start it back at 0 brightness
 }
 
 }
 
-if (mode == "strobe"){
+if (mode == "to_initial_adjust"){
+analogWrite(LEDPin,244);
+delay(100);               
+analogWrite(LEDPin,0);
+delay(100);
+analogWrite(LEDPin,244);
+delay(100);               
+analogWrite(LEDPin,0);
+delay(100);        
+analogWrite(LEDPin,244);
+delay(100);               
+analogWrite(LEDPin,0);
+delay(100);
+analogWrite(LEDPin,244);
+delay(100);               
+analogWrite(LEDPin,0);
+delay(100);
+analogWrite(LEDPin,244);
+delay(100);               
+analogWrite(LEDPin,0);
+delay(100);      
+mode = "initial_adjust";
+}
+
+if (mode == "initial_adjust"){
+
+if (counterclockwise == 1){if(k + k_delta <= .01) {k += k_delta;}}
+if (clockwise == 1){if(k - k_delta >= .0019) k -= k_delta;}
+//k = pow(breath_length,3)*-0.000004166667+pow(breath_length,2)*0.000175000000+breath_length*-0.002583333333+0.015500000000;
 brightness = 127*(1 + sin(k*x));  
 if (tick(delay_int,second_timer) == 1){
   x += brightincrease;
 }
+
+if (x*k >= 2*3.14159){x=0;}
 
 analogWrite(LEDPin,brightness);
 
