@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="Sleep Sensei Kickstarter Video" themeId="0" version="65540" templateID="SimpleProjectTemplate">
   <MediaItems>
-    <MediaItem id="17" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\MVI_7075.MOV" arWidth="1920" arHeight="1080" duration="148.56480719999999" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
-    <MediaItem id="18" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\MVI_7062.MOV" arWidth="1920" arHeight="1080" duration="176.0107936" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
+    <MediaItem id="17" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\MVI_7075.MOV" arWidth="1920" arHeight="1080" duration="148.5" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
     <MediaItem id="1" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\MVI_7061.MOV" arWidth="1920" arHeight="1080" duration="55.011609900000003" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
-    <MediaItem id="19" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 10 Audio.mp3" arWidth="0" arHeight="0" duration="8.0717499999999998" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
+    <MediaItem id="18" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\MVI_7062.MOV" arWidth="1920" arHeight="1080" duration="176.0107936" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
     <MediaItem id="2" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\MVI_7078.MOV" arWidth="1920" arHeight="1080" duration="711.76480719999995" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
-    <MediaItem id="20" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\MVI_7068.MOV" arWidth="1920" arHeight="1080" duration="173.71201809999999" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
+    <MediaItem id="19" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 10 Audio.mp3" arWidth="0" arHeight="0" duration="8.0717499999999998" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
     <MediaItem id="3" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 2 Audio.mp3" arWidth="0" arHeight="0" duration="14.0015625" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
+    <MediaItem id="20" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\MVI_7068.MOV" arWidth="1920" arHeight="1080" duration="173.71201809999999" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
     <MediaItem id="4" filePath="D:\My Videos\Sleep Sensei Videos\Keepers\MVI_7048.MOV" arWidth="1920" arHeight="1080" duration="145.8016326" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
+    <MediaItem id="21" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\MVI_7070.MOV" arWidth="1920" arHeight="1080" duration="161.69999999999999" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
     <MediaItem id="5" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 3 Audio.mp3" arWidth="0" arHeight="0" duration="5.9819374999999999" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
     <MediaItem id="6" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 4 Audio.mp3" arWidth="0" arHeight="0" duration="10.475" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
+    <MediaItem id="23" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 12 Audio.mp3" arWidth="0" arHeight="0" duration="9.0905000000000005" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
     <MediaItem id="7" filePath="D:\My Videos\Sleep Sensei Videos\Keepers\Tweaking Knob.MOV" arWidth="1920" arHeight="1080" duration="57.008526000000003" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
+    <MediaItem id="24" filePath="C:\Users\jerwi_000\Documents\Arduino\SleepCoach\Website Assets\Parts for Board Edit.jpg" arWidth="4752" arHeight="3168" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
     <MediaItem id="8" filePath="D:\My Videos\Sleep Sensei Videos\Keepers\Autocad 2d.MOV" arWidth="1920" arHeight="1080" duration="43.401632599999999" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
     <MediaItem id="9" filePath="D:\My Videos\Sleep Sensei Videos\Keepers\Autcad 3D.MOV" arWidth="1920" arHeight="1080" duration="33.718911499999997" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
     <MediaItem id="10" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 5 Audio.mp3" arWidth="0" arHeight="0" duration="8.7770624999999995" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
@@ -23,10 +26,44 @@
     <MediaItem id="16" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 8 Audio.mp3" arWidth="0" arHeight="0" duration="8.0978750000000002" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
   </MediaItems>
   <Extents>
-    <VideoClip extentID="69" gapBefore="0" mediaItemID="9" inTime="18.13333333333334" outTime="21.900000000000006" speed="1" stabilizationMode="0">
+    <AudioClip extentID="57" gapBefore="0.091666666666668561" mediaItemID="16" inTime="0" outTime="7.5" speed="1">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyFloat Name="Volume" Value="1" />
+      </BoundProperties>
+    </AudioClip>
+    <AudioClip extentID="5" gapBefore="11.173333333333341" mediaItemID="23" inTime="0.34010416666663446" outTime="7.75" speed="1">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyFloat Name="Volume" Value="1" />
+      </BoundProperties>
+    </AudioClip>
+    <VideoClip extentID="6" gapBefore="0" mediaItemID="1" inTime="13.733333333333334" outTime="24.300000000000001" speed="1" stabilizationMode="0">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+        <BoundPropertyFloat Name="Volume" Value="1" />
+      </BoundProperties>
+    </VideoClip>
+    <VideoClip extentID="62" gapBefore="0" mediaItemID="17" inTime="108.43333333333334" outTime="114.33333333333334" speed="1" stabilizationMode="0">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+        <BoundPropertyFloat Name="Volume" Value="0" />
+      </BoundProperties>
+    </VideoClip>
+    <VideoClip extentID="9" gapBefore="0" mediaItemID="2" inTime="673.36666666666656" outTime="688.56666666666661" speed="1" stabilizationMode="0">
       <Effects />
       <Transitions>
-        <ShapeEffect effectTemplateID="BlurTransitionTemplate" duration="0.25">
+        <ShapeEffect effectTemplateID="BlurTransitionTemplate" duration="0.5">
           <BoundProperties />
         </ShapeEffect>
       </Transitions>
@@ -36,9 +73,47 @@
         <BoundPropertyFloat Name="Volume" Value="0" />
       </BoundProperties>
     </VideoClip>
-    <VideoClip extentID="52" gapBefore="0" mediaItemID="15" inTime="150.76666666666665" outTime="152.43333333333331" speed="1" stabilizationMode="0">
+    <VideoClip extentID="65" gapBefore="0" mediaItemID="18" inTime="129.90000000000001" outTime="136.90000000000001" speed="1" stabilizationMode="0">
       <Effects />
       <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+        <BoundPropertyFloat Name="Volume" Value="1.1921569108963013" />
+      </BoundProperties>
+    </VideoClip>
+    <AudioClip extentID="12" gapBefore="10.566666666666666" mediaItemID="3" inTime="0" outTime="0" speed="1">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyFloat Name="Volume" Value="1" />
+      </BoundProperties>
+    </AudioClip>
+    <VideoClip extentID="67" gapBefore="0" mediaItemID="18" inTime="136.90000000000001" outTime="137.96666666666667" speed="1" stabilizationMode="0">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+        <BoundPropertyFloat Name="Volume" Value="0" />
+      </BoundProperties>
+    </VideoClip>
+    <AudioClip extentID="15" gapBefore="1.1884375000000418" mediaItemID="5" inTime="0" outTime="0" speed="1">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyFloat Name="Volume" Value="1" />
+      </BoundProperties>
+    </AudioClip>
+    <VideoClip extentID="69" gapBefore="0" mediaItemID="9" inTime="18.13333333333334" outTime="21.900000000000006" speed="1" stabilizationMode="0">
+      <Effects />
+      <Transitions>
+        <ShapeEffect effectTemplateID="BlurTransitionTemplate" duration="0.25">
+          <BoundProperties />
+        </ShapeEffect>
+      </Transitions>
       <BoundProperties>
         <BoundPropertyBool Name="Mute" Value="false" />
         <BoundPropertyInt Name="rotateStepNinety" Value="0" />
@@ -53,6 +128,89 @@
         <BoundPropertyFloat Name="Volume" Value="1" />
       </BoundProperties>
     </AudioClip>
+    <VideoClip extentID="73" gapBefore="0" mediaItemID="7" inTime="7.1666666666666714" outTime="11.566666666666677" speed="1" stabilizationMode="0">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+        <BoundPropertyFloat Name="Volume" Value="0" />
+      </BoundProperties>
+    </VideoClip>
+    <VideoClip extentID="22" gapBefore="0" mediaItemID="2" inTime="673.36666666666656" outTime="691.16666666666652" speed="1" stabilizationMode="0">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+        <BoundPropertyFloat Name="Volume" Value="0" />
+      </BoundProperties>
+    </VideoClip>
+    <VideoClip extentID="24" gapBefore="0" mediaItemID="4" inTime="23.266666666666712" outTime="0" speed="1" stabilizationMode="0">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+        <BoundPropertyFloat Name="Volume" Value="1" />
+      </BoundProperties>
+    </VideoClip>
+    <VideoClip extentID="26" gapBefore="0" mediaItemID="4" inTime="14.366666666666713" outTime="21.900000000000091" speed="1" stabilizationMode="0">
+      <Effects />
+      <Transitions>
+        <ShapeEffect effectTemplateID="BlurTransitionTemplate" duration="0.5">
+          <BoundProperties />
+        </ShapeEffect>
+      </Transitions>
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+        <BoundPropertyFloat Name="Volume" Value="0" />
+      </BoundProperties>
+    </VideoClip>
+    <VideoClip extentID="80" gapBefore="0" mediaItemID="20" inTime="145.26666666666665" outTime="155.61666666666667" speed="1" stabilizationMode="0">
+      <Effects />
+      <Transitions>
+        <ShapeEffect effectTemplateID="BlurTransitionTemplate" duration="0.25">
+          <BoundProperties />
+        </ShapeEffect>
+      </Transitions>
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+        <BoundPropertyFloat Name="Volume" Value="1" />
+      </BoundProperties>
+    </VideoClip>
+    <VideoClip extentID="27" gapBefore="0" mediaItemID="4" inTime="21.900000000000091" outTime="23.266666666666712" speed="1" stabilizationMode="0">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+        <BoundPropertyFloat Name="Volume" Value="0" />
+      </BoundProperties>
+    </VideoClip>
+    <AudioClip extentID="29" gapBefore="1.9180625000000049" mediaItemID="6" inTime="0" outTime="0" speed="1">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyFloat Name="Volume" Value="1" />
+      </BoundProperties>
+    </AudioClip>
+    <VideoClip extentID="30" gapBefore="0" mediaItemID="2" inTime="177.66666666666663" outTime="188.49999999999991" speed="1" stabilizationMode="0">
+      <Effects />
+      <Transitions>
+        <ShapeEffect effectTemplateID="BlurTransitionTemplate" duration="0.5">
+          <BoundProperties />
+        </ShapeEffect>
+      </Transitions>
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+        <BoundPropertyFloat Name="Volume" Value="0" />
+      </BoundProperties>
+    </VideoClip>
     <AudioClip extentID="36" gapBefore="-0.09722222222225696" mediaItemID="10" inTime="0" outTime="0" speed="1">
       <Effects />
       <Transitions />
@@ -74,32 +232,69 @@
         <BoundPropertyFloat Name="Volume" Value="0" />
       </BoundProperties>
     </VideoClip>
-    <VideoClip extentID="73" gapBefore="0" mediaItemID="7" inTime="7.1666666666666714" outTime="11.566666666666677" speed="1" stabilizationMode="0">
-      <Effects />
+    <TitleClip extentID="91" gapBefore="44.344181362787907" duration="4">
+      <Effects>
+        <TextEffect effectTemplateID="TextEffectFadeTemplate" TextScriptId="1">
+          <BoundProperties>
+            <BoundPropertyBool Name="automatic" Value="false" />
+            <BoundPropertyFloatSet Name="color">
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="1" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyStringSet Name="family">
+              <BoundPropertyStringElement Value="Pluto Sans Cond Bold" />
+            </BoundPropertyStringSet>
+            <BoundPropertyBool Name="horizontal" Value="true" />
+            <BoundPropertyStringSet Name="justify">
+              <BoundPropertyStringElement Value="MIDDLE" />
+            </BoundPropertyStringSet>
+            <BoundPropertyBool Name="leftToRight" Value="true" />
+            <BoundPropertyFloatSet Name="length" />
+            <BoundPropertyFloat Name="maxExtent" Value="0" />
+            <BoundPropertyFloatSet Name="outlineColor">
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyInt Name="outlineSizeIndex" Value="0" />
+            <BoundPropertyFloatSet Name="position">
+              <BoundPropertyFloatElement Value="3.0915255546569824" />
+              <BoundPropertyFloatElement Value="-2.180722713470459" />
+              <BoundPropertyFloatElement Value="0.02500000037252903" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyFloat Name="size" Value="0.40000000596046448" />
+            <BoundPropertyStringSet Name="string">
+              <BoundPropertyStringElement Value="getsleepsenei.com" />
+            </BoundPropertyStringSet>
+            <BoundPropertyString Name="style" Value="Bold" />
+            <BoundPropertyFloat Name="transparency" Value="0" />
+          </BoundProperties>
+        </TextEffect>
+      </Effects>
       <Transitions />
+      <BoundProperties>
+        <BoundPropertyFloatSet Name="diffuseColor">
+          <BoundPropertyFloatElement Value="0.75" />
+          <BoundPropertyFloatElement Value="1" />
+          <BoundPropertyFloatElement Value="0" />
+        </BoundPropertyFloatSet>
+        <BoundPropertyFloat Name="transparency" Value="1" />
+      </BoundProperties>
+    </TitleClip>
+    <VideoClip extentID="92" gapBefore="0" mediaItemID="21" inTime="48.183333333333323" outTime="56.566666666666634" speed="1" stabilizationMode="0">
+      <Effects />
+      <Transitions>
+        <ShapeEffect effectTemplateID="BlurTransitionTemplate" duration="0.5">
+          <BoundProperties />
+        </ShapeEffect>
+      </Transitions>
       <BoundProperties>
         <BoundPropertyBool Name="Mute" Value="false" />
         <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="0" />
-      </BoundProperties>
-    </VideoClip>
-    <VideoClip extentID="22" gapBefore="0" mediaItemID="2" inTime="673.36666666666656" outTime="691.16666666666652" speed="1" stabilizationMode="0">
-      <Effects />
-      <Transitions />
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
-        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="0" />
-      </BoundProperties>
-    </VideoClip>
-    <AudioClip extentID="57" gapBefore="0.091666666666668561" mediaItemID="16" inTime="0" outTime="7.5" speed="1">
-      <Effects />
-      <Transitions />
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
         <BoundPropertyFloat Name="Volume" Value="1" />
       </BoundProperties>
-    </AudioClip>
+    </VideoClip>
     <AudioClip extentID="40" gapBefore="0.32182638888887993" mediaItemID="12" inTime="0" outTime="0" speed="1">
       <Effects />
       <Transitions />
@@ -108,15 +303,6 @@
         <BoundPropertyFloat Name="Volume" Value="1" />
       </BoundProperties>
     </AudioClip>
-    <VideoClip extentID="6" gapBefore="0" mediaItemID="1" inTime="13.733333333333334" outTime="24.300000000000001" speed="1" stabilizationMode="0">
-      <Effects />
-      <Transitions />
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
-        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="1" />
-      </BoundProperties>
-    </VideoClip>
     <VideoClip extentID="41" gapBefore="0" mediaItemID="11" inTime="2.3999999999999915" outTime="18.399999999999988" speed="1.25" stabilizationMode="0">
       <Effects />
       <Transitions>
@@ -130,15 +316,19 @@
         <BoundPropertyFloat Name="Volume" Value="1" />
       </BoundProperties>
     </VideoClip>
-    <VideoClip extentID="24" gapBefore="0" mediaItemID="4" inTime="23.266666666666712" outTime="145.8016326" speed="1" stabilizationMode="0">
-      <Effects />
+    <ImageClip extentID="96" gapBefore="0" mediaItemID="24" duration="8.25">
+      <Effects>
+        <PanAndZoomShapeEffect effectTemplateID="PanAndZoomEffectPanBottomToTopAlongMiddleTemplate">
+          <BoundProperties>
+            <BoundPropertyInt Name="effectType" Value="4" />
+          </BoundProperties>
+        </PanAndZoomShapeEffect>
+      </Effects>
       <Transitions />
       <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
         <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="1" />
       </BoundProperties>
-    </VideoClip>
+    </ImageClip>
     <ImageClip extentID="43" gapBefore="0" mediaItemID="13" duration="11.5">
       <Effects />
       <Transitions>
@@ -150,32 +340,6 @@
         <BoundPropertyInt Name="rotateStepNinety" Value="0" />
       </BoundProperties>
     </ImageClip>
-    <VideoClip extentID="26" gapBefore="0" mediaItemID="4" inTime="14.366666666666713" outTime="21.900000000000091" speed="1" stabilizationMode="0">
-      <Effects />
-      <Transitions>
-        <ShapeEffect effectTemplateID="BlurTransitionTemplate" duration="0.5">
-          <BoundProperties />
-        </ShapeEffect>
-      </Transitions>
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
-        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="0" />
-      </BoundProperties>
-    </VideoClip>
-    <VideoClip extentID="9" gapBefore="0" mediaItemID="2" inTime="673.36666666666656" outTime="688.56666666666661" speed="1" stabilizationMode="0">
-      <Effects />
-      <Transitions>
-        <ShapeEffect effectTemplateID="BlurTransitionTemplate" duration="0.5">
-          <BoundProperties />
-        </ShapeEffect>
-      </Transitions>
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
-        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="0" />
-      </BoundProperties>
-    </VideoClip>
     <AudioClip extentID="44" gapBefore="-0.081937500000009322" mediaItemID="14" inTime="0" outTime="0" speed="1">
       <Effects />
       <Transitions />
@@ -184,37 +348,6 @@
         <BoundPropertyFloat Name="Volume" Value="1" />
       </BoundProperties>
     </AudioClip>
-    <VideoClip extentID="27" gapBefore="0" mediaItemID="4" inTime="21.900000000000091" outTime="23.266666666666712" speed="1" stabilizationMode="0">
-      <Effects />
-      <Transitions />
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
-        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="0" />
-      </BoundProperties>
-    </VideoClip>
-    <VideoClip extentID="62" gapBefore="0" mediaItemID="17" inTime="108.43333333333334" outTime="114.33333333333334" speed="1" stabilizationMode="0">
-      <Effects />
-      <Transitions />
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
-        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="0" />
-      </BoundProperties>
-    </VideoClip>
-    <VideoClip extentID="80" gapBefore="0" mediaItemID="20" inTime="145.26666666666665" outTime="155.61666666666667" speed="1" stabilizationMode="0">
-      <Effects />
-      <Transitions>
-        <ShapeEffect effectTemplateID="BlurTransitionTemplate" duration="0.25">
-          <BoundProperties />
-        </ShapeEffect>
-      </Transitions>
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
-        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="1" />
-      </BoundProperties>
-    </VideoClip>
     <TitleClip extentID="46" gapBefore="66.183333333333337" duration="3">
       <Effects>
         <TextEffect effectTemplateID="TextEffectFadeTemplate" TextScriptId="1">
@@ -265,44 +398,6 @@
         <BoundPropertyFloat Name="transparency" Value="1" />
       </BoundProperties>
     </TitleClip>
-    <AudioClip extentID="29" gapBefore="1.9180625000000049" mediaItemID="6" inTime="0" outTime="0" speed="1">
-      <Effects />
-      <Transitions />
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
-        <BoundPropertyFloat Name="Volume" Value="1" />
-      </BoundProperties>
-    </AudioClip>
-    <AudioClip extentID="12" gapBefore="10.566666666666666" mediaItemID="3" inTime="0" outTime="0" speed="1">
-      <Effects />
-      <Transitions />
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
-        <BoundPropertyFloat Name="Volume" Value="1" />
-      </BoundProperties>
-    </AudioClip>
-    <VideoClip extentID="30" gapBefore="0" mediaItemID="2" inTime="177.66666666666663" outTime="188.49999999999991" speed="1" stabilizationMode="0">
-      <Effects />
-      <Transitions>
-        <ShapeEffect effectTemplateID="BlurTransitionTemplate" duration="0.5">
-          <BoundProperties />
-        </ShapeEffect>
-      </Transitions>
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
-        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="0" />
-      </BoundProperties>
-    </VideoClip>
-    <VideoClip extentID="65" gapBefore="0" mediaItemID="18" inTime="129.90000000000001" outTime="136.90000000000001" speed="1" stabilizationMode="0">
-      <Effects />
-      <Transitions />
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
-        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="1.1921569108963013" />
-      </BoundProperties>
-    </VideoClip>
     <TitleClip extentID="48" gapBefore="0.11666666666666003" duration="3">
       <Effects>
         <TextEffect effectTemplateID="TextEffectFadeTemplate" TextScriptId="1">
@@ -404,15 +499,7 @@
         <BoundPropertyFloat Name="transparency" Value="1" />
       </BoundProperties>
     </TitleClip>
-    <AudioClip extentID="15" gapBefore="1.1884375000000418" mediaItemID="5" inTime="0" outTime="0" speed="1">
-      <Effects />
-      <Transitions />
-      <BoundProperties>
-        <BoundPropertyBool Name="Mute" Value="false" />
-        <BoundPropertyFloat Name="Volume" Value="1" />
-      </BoundProperties>
-    </AudioClip>
-    <VideoClip extentID="67" gapBefore="0" mediaItemID="18" inTime="136.90000000000001" outTime="137.96666666666667" speed="1" stabilizationMode="0">
+    <VideoClip extentID="52" gapBefore="0" mediaItemID="15" inTime="150.76666666666665" outTime="152.43333333333331" speed="1" stabilizationMode="0">
       <Effects />
       <Transitions />
       <BoundProperties>
@@ -441,6 +528,8 @@
         <ExtentRef id="69" />
         <ExtentRef id="73" />
         <ExtentRef id="80" />
+        <ExtentRef id="96" />
+        <ExtentRef id="92" />
       </ExtentRefs>
     </ExtentSelector>
     <ExtentSelector extentID="2" gapBefore="0" primaryTrack="false">
@@ -456,6 +545,7 @@
         <ExtentRef id="44" />
         <ExtentRef id="57" />
         <ExtentRef id="70" />
+        <ExtentRef id="5" />
       </ExtentRefs>
     </ExtentSelector>
     <ExtentSelector extentID="3" gapBefore="0" primaryTrack="false">
@@ -472,6 +562,7 @@
         <ExtentRef id="46" />
         <ExtentRef id="48" />
         <ExtentRef id="49" />
+        <ExtentRef id="91" />
       </ExtentRefs>
     </ExtentSelector>
   </Extents>
@@ -479,8 +570,8 @@
     <BoundPlaceholder placeholderID="SingleExtentView" extentID="0" />
     <BoundPlaceholder placeholderID="Main" extentID="1" />
     <BoundPlaceholder placeholderID="SoundTrack" extentID="2" />
-    <BoundPlaceholder placeholderID="Text" extentID="4" />
     <BoundPlaceholder placeholderID="Narration" extentID="3" />
+    <BoundPlaceholder placeholderID="Text" extentID="4" />
   </BoundPlaceholders>
   <BoundProperties>
     <BoundPropertyFloatSet Name="AspectRatio">
