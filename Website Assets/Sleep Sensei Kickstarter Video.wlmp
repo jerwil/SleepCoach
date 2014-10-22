@@ -14,7 +14,7 @@
     <MediaItem id="6" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 4 Audio.mp3" arWidth="0" arHeight="0" duration="10.475" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
     <MediaItem id="23" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 12 Audio.mp3" arWidth="0" arHeight="0" duration="9.0905000000000005" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
     <MediaItem id="7" filePath="D:\My Videos\Sleep Sensei Videos\Keepers\Tweaking Knob.MOV" arWidth="1920" arHeight="1080" duration="57.008526000000003" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
-    <MediaItem id="24" filePath="C:\Users\jerwi_000\Documents\Arduino\SleepCoach\Website Assets\Parts for Board Edit.jpg" arWidth="4752" arHeight="3168" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="24" filePath="C:\Users\jerwi_000\Documents\Arduino\SleepCoach\Website Assets\Parts for Board Edit.jpg" arWidth="256" arHeight="171" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
     <MediaItem id="25" filePath="D:\My Videos\Sleep Sensei Videos\Keepers\Moving across new.MOV" arWidth="1920" arHeight="1080" duration="46.350566800000003" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
     <MediaItem id="8" filePath="D:\My Videos\Sleep Sensei Videos\Keepers\Autocad 2d.MOV" arWidth="1920" arHeight="1080" duration="43.401632599999999" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
     <MediaItem id="26" filePath="C:\Users\jerwi_000\Documents\Arduino\SleepCoach\Website Assets\User 1 Graph.png" arWidth="977" arHeight="564" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
@@ -27,6 +27,7 @@
     <MediaItem id="12" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 6 Audio.mp3" arWidth="0" arHeight="0" duration="12.381937499999999" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
     <MediaItem id="30" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 9 Audio.mp3" arWidth="0" arHeight="0" duration="7.6276875000000004" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
     <MediaItem id="13" filePath="C:\Users\jerwi_000\Documents\Arduino\SleepCoach\Website Assets\User 4 Results for Vid.jpg" arWidth="256" arHeight="144" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="31" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 1 Audio.mp3" arWidth="0" arHeight="0" duration="10.057062500000001" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
     <MediaItem id="14" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 7 Audio.mp3" arWidth="0" arHeight="0" duration="10.475" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
     <MediaItem id="15" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\MVI_7072.MOV" arWidth="1920" arHeight="1080" duration="172.06340130000001" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
     <MediaItem id="16" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 8 Audio.mp3" arWidth="0" arHeight="0" duration="8.0978750000000002" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
@@ -54,7 +55,7 @@
       <BoundProperties>
         <BoundPropertyBool Name="Mute" Value="false" />
         <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="1" />
+        <BoundPropertyFloat Name="Volume" Value="0" />
       </BoundProperties>
     </VideoClip>
     <VideoClip extentID="62" gapBefore="0" mediaItemID="17" inTime="108.43333333333334" outTime="114.33333333333334" speed="1" stabilizationMode="0">
@@ -105,10 +106,10 @@
       <BoundProperties>
         <BoundPropertyBool Name="Mute" Value="false" />
         <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="0.21176472306251526" />
+        <BoundPropertyFloat Name="Volume" Value="0" />
       </BoundProperties>
     </VideoClip>
-    <AudioClip extentID="12" gapBefore="10.566666666666666" mediaItemID="3" inTime="0" outTime="0" speed="1">
+    <AudioClip extentID="12" gapBefore="0.46960416666666571" mediaItemID="3" inTime="0" outTime="0" speed="1">
       <Effects />
       <Transitions />
       <BoundProperties>
@@ -138,7 +139,7 @@
         <BoundPropertyInt Name="rotateStepNinety" Value="0" />
       </BoundProperties>
     </ImageClip>
-    <AudioClip extentID="15" gapBefore="1.1884375000000418" mediaItemID="5" inTime="0" outTime="0" speed="1">
+    <AudioClip extentID="15" gapBefore="1.1884375000000436" mediaItemID="5" inTime="0" outTime="0" speed="1">
       <Effects />
       <Transitions />
       <BoundProperties>
@@ -254,6 +255,14 @@
         <BoundPropertyFloat Name="Volume" Value="0" />
       </BoundProperties>
     </VideoClip>
+    <AudioClip extentID="28" gapBefore="0.040000000000000001" mediaItemID="31" inTime="0.16666666666666666" outTime="10.057062500000001" speed="1">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyFloat Name="Volume" Value="1" />
+      </BoundProperties>
+    </AudioClip>
     <AudioClip extentID="29" gapBefore="1.9180625000000049" mediaItemID="6" inTime="0" outTime="0" speed="1">
       <Effects />
       <Transitions />
@@ -580,6 +589,7 @@
       <Transitions />
       <BoundProperties />
       <ExtentRefs>
+        <ExtentRef id="28" />
         <ExtentRef id="12" />
         <ExtentRef id="15" />
         <ExtentRef id="29" />
