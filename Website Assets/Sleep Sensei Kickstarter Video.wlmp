@@ -25,6 +25,7 @@
     <MediaItem id="11" filePath="D:\My Videos\Sleep Sensei Videos\Keepers\Sliding across designs.MOV" arWidth="1920" arHeight="1080" duration="23.1073922" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
     <MediaItem id="29" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 11 Audio.mp3" arWidth="0" arHeight="0" duration="10.501125" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
     <MediaItem id="12" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 6 Audio.mp3" arWidth="0" arHeight="0" duration="12.381937499999999" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
+    <MediaItem id="30" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 9 Audio.mp3" arWidth="0" arHeight="0" duration="7.6276875000000004" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
     <MediaItem id="13" filePath="C:\Users\jerwi_000\Documents\Arduino\SleepCoach\Website Assets\User 4 Results for Vid.jpg" arWidth="256" arHeight="144" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
     <MediaItem id="14" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\Audio\Scene 7 Audio.mp3" arWidth="0" arHeight="0" duration="10.475" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
     <MediaItem id="15" filePath="D:\My Videos\Sleep Sensei Videos\Shot with Atti\MVI_7072.MOV" arWidth="1920" arHeight="1080" duration="172.06340130000001" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="1" />
@@ -104,7 +105,7 @@
       <BoundProperties>
         <BoundPropertyBool Name="Mute" Value="false" />
         <BoundPropertyInt Name="rotateStepNinety" Value="0" />
-        <BoundPropertyFloat Name="Volume" Value="1.1921569108963013" />
+        <BoundPropertyFloat Name="Volume" Value="0.21176472306251526" />
       </BoundProperties>
     </VideoClip>
     <AudioClip extentID="12" gapBefore="10.566666666666666" mediaItemID="3" inTime="0" outTime="0" speed="1">
@@ -192,6 +193,14 @@
         <BoundPropertyFloat Name="Volume" Value="0" />
       </BoundProperties>
     </VideoClip>
+    <AudioClip extentID="21" gapBefore="82.680000000000007" mediaItemID="30" inTime="0.46666666666666856" outTime="7.6276875000000004" speed="1">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyFloat Name="Volume" Value="0.32156863808631897" />
+      </BoundProperties>
+    </AudioClip>
     <VideoClip extentID="22" gapBefore="0" mediaItemID="2" inTime="673.36666666666656" outTime="691.16666666666652" speed="1" stabilizationMode="0">
       <Effects />
       <Transitions />
@@ -314,8 +323,8 @@
             </BoundPropertyFloatSet>
             <BoundPropertyInt Name="outlineSizeIndex" Value="0" />
             <BoundPropertyFloatSet Name="position">
-              <BoundPropertyFloatElement Value="2.2037997245788574" />
-              <BoundPropertyFloatElement Value="-2.108433723449707" />
+              <BoundPropertyFloatElement Value="2.7661013603210449" />
+              <BoundPropertyFloatElement Value="-2" />
               <BoundPropertyFloatElement Value="0.02500000037252903" />
             </BoundPropertyFloatSet>
             <BoundPropertyFloat Name="size" Value="0.40000000596046448" />
@@ -587,7 +596,9 @@
       <Effects />
       <Transitions />
       <BoundProperties />
-      <ExtentRefs />
+      <ExtentRefs>
+        <ExtentRef id="21" />
+      </ExtentRefs>
     </ExtentSelector>
     <ExtentSelector extentID="4" gapBefore="0" primaryTrack="false">
       <Effects />
@@ -612,8 +623,8 @@
     <BoundPropertyFloatSet Name="AspectRatio">
       <BoundPropertyFloatElement Value="1.7777776718139648" />
     </BoundPropertyFloatSet>
-    <BoundPropertyFloat Name="DuckedNarrationAndSoundTrackMix" Value="1" />
-    <BoundPropertyFloat Name="DuckedVideoAndNarrationMix" Value="0" />
+    <BoundPropertyFloat Name="DuckedNarrationAndSoundTrackMix" Value="0.5" />
+    <BoundPropertyFloat Name="DuckedVideoAndNarrationMix" Value="0.5" />
     <BoundPropertyFloat Name="DuckedVideoAndSoundTrackMix" Value="0.5" />
     <BoundPropertyFloat Name="SoundTrackMix" Value="0.5" />
   </BoundProperties>
