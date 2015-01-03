@@ -76,15 +76,6 @@ double k_values[8] = {.0054, .0054, .0054, .0054, .003, .0025, .0022, .0019}; //
 
 int blink_times_array[4] = {250,500,750,1000}; // The delay in blinking for the four profiles during profile selection
 
-double k1_initial = .0054; // 6 seconds
-double k2_initial = .0054;
-double k3_initial = .0054;
-double k4_initial = .0054;
-double k1_final = .003;  // 10 seconds
-double k2_final = .0025; // 12 seconds
-double k3_final = .0022; //14 seconds
-double k4_final = .0019; //16 seconds
-
 int eepromwrite = 200;
 
 int val = 200; // Current value read from EEPROM
@@ -128,7 +119,7 @@ else {
   for (int i = 0; i < 512; i++)
     EEPROM.write(i, 0);
   for (int i = 0; i < 8; i++){
-  EEPROM.write(i,54);
+  EEPROM.write(i,k_values[i]);
   }
     EEPROM.write(8,1);
 }
@@ -145,13 +136,11 @@ mode = "time_choose";
       if(encoder_B) {
         // B is high so clockwise
         // increase the brightness multiplier, dont go over 25
-        clockwise = 1;
-        if(brightness_mult + fadeAmount <= 25) brightness_mult += fadeAmount;               
+        clockwise = 1;            
       }   
       else {
         // B is low so counter-clockwise      
         // decrease the brightness, dont go below 0
-        if(brightness_mult - fadeAmount >= 2) brightness_mult -= fadeAmount;
          counterclockwise = 1;        
       } 
     }
@@ -162,6 +151,9 @@ button_state = digitalRead(ButtonPin);
 button_pushed = button_press (button_state, button_press_initiate, button_press_completed);
   
 if (mode == "time_choose"){
+  
+  if (clockwise == 1){if(brightness_mult + fadeAmount <= 25) brightness_mult += fadeAmount;}
+  if (counterclockwise == 1){if(brightness_mult - fadeAmount >= 2) brightness_mult -= fadeAmount;}
   
 x = 0;
   
@@ -236,6 +228,9 @@ if (timeout >= timeout_setting){mode = "off";}
 }
   
 if (mode == "sleep_coach"){
+  
+if (clockwise == 1){if(brightness_mult + fadeAmount <= 25) brightness_mult += fadeAmount;}
+if (counterclockwise == 1){if(brightness_mult - fadeAmount >= 2) brightness_mult -= fadeAmount;}
   
 timeout = 0;
   
@@ -478,6 +473,28 @@ void flash_led(int pin, int times_to_flash, int wait_time){
   delay(wait_time);
   i++;
   }
+}
+
+int rotary_encoder(){
+     clockwise = 0;
+    counterclockwise = 0;
+    encoder_A = digitalRead(pin_A);    // Read encoder pins
+    encoder_B = digitalRead(pin_B);   
+    if((!encoder_A) && (encoder_A_prev)){
+      // A has gone from high to low 
+      if(encoder_B) {
+        // B is high so clockwise
+        // increase the brightness multiplier, dont go over 25
+        clockwise = 1;         
+      }   
+      else {
+        // B is low so counter-clockwise      
+        // decrease the brightness, dont go below 0
+         clockwise = -1;        
+      } 
+    }
+encoder_A_prev = encoder_A;
+return clockwise;
 }
 
 void system_sleep() {
