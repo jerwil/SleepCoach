@@ -21,6 +21,7 @@ char* mode = "initialize"; // Modes are time_choose, sleep_coach, and off
 // Time choose mode is where the user choses between 7, 14, 21, and 28 minutes of sleep coaching
 // sleep coach mode is the mode with pulsating light
 // off is when the sleep coaching is complete. A button press will bring it into time choose mode
+// Intermediate modes are used to indicate switching between modes
 
 int profile = 1;
 
@@ -72,6 +73,8 @@ double breath_length = 6; // The user determined breath length
 double k_delta = .0002; // The amount of change in k for each rotary encoder tick
 
 double k_values[8] = {.0054, .0054, .0054, .0054, .003, .0025, .0022, .0019}; // {k1_initial, k2_initial, k3_initial, k4_initial, k1_final, k2_final, k3_final, k4_final}
+
+int blink_times_array[4] = {250,500,750,1000}; // The delay in blinking for the four profiles during profile selection
 
 double k1_initial = .0054; // 6 seconds
 double k2_initial = .0054;
@@ -173,18 +176,7 @@ profile = 0;
 mode = "off";
 }
   
-  if (profile == 1){
-    blink_time = 250;
-  }
-  if (profile == 2){
-    blink_time = 500;
-  }
-  if (profile == 3){
-    blink_time = 750;
-  }
-  if (profile == 4){
-    blink_time = 1000;
-  }
+blink_time = blink_times_array[profile-1];
  
 if (tick(1000,second_timer) == 1){
 timeout += 1;
