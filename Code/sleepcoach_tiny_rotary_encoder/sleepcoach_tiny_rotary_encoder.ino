@@ -76,6 +76,8 @@ double k_values[8] = {.0054, .0054, .0054, .0054, .003, .0025, .0022, .0019}; //
 
 int blink_times_array[4] = {250,500,750,1000}; // The delay in blinking for the four profiles during profile selection
 
+int profile_times_array[4] = {420, 840, 1260, 1680};
+
 int eepromwrite = 200;
 
 int val = 200; // Current value read from EEPROM
@@ -88,7 +90,6 @@ int button_press_completed[1];    // storage for button press function
 
 
 void setup() {                
-  // initialize the digital pin as an output.
   pinMode(LEDPin, OUTPUT);
   pinMode(ButtonPin, INPUT);
   pinMode(pin_A, INPUT);
@@ -105,8 +106,13 @@ void setup() {
 void loop() {
   
 if (mode == "initialize"){
+  
+if (digitalRead(ButtonPin) == 1){
+  eeprom_reset();
+  flash_led(LEDPin, 10, 50);
+}
  
-if (EEPROM.read(8) == 1){
+else if (EEPROM.read(8) == 1){
 
 for (int i = 0; i < 8; i++){
   val = EEPROM.read(i);
@@ -116,13 +122,10 @@ for (int i = 0; i < 8; i++){
 }
 
 else {
-  for (int i = 0; i < 512; i++)
-    EEPROM.write(i, 0);
-  for (int i = 0; i < 8; i++){
-  EEPROM.write(i,k_values[i]);
-  }
-    EEPROM.write(8,1);
+   eeprom_reset();
 }
+
+
   
 mode = "time_choose";
 }
@@ -201,23 +204,7 @@ button_pushed = 0;
 mode = "sleep_coach";
 button_counter = 0;
 
-  if (profile == 1){
-
-    total_time = 420;
-  }
-  if (profile == 2){
-
-    total_time = 840;
-  }
-  if (profile == 3){
-
-    total_time = 1260;
-  }
-  if (profile == 4){
-
-    total_time = 1680;
-  }
-
+total_time = profile_times_array[profile - 1];
 k_initial = k_values[profile-1];
 k_final = k_values[profile+3];
 
@@ -495,6 +482,15 @@ int rotary_encoder(){
     }
 encoder_A_prev = encoder_A;
 return clockwise;
+}
+
+void eeprom_reset(){
+  for (int i = 0; i < 512; i++)
+  EEPROM.write(i, 0);
+  for (int i = 0; i < 8; i++){
+  EEPROM.write(i,k_values[i]);
+  }
+  EEPROM.write(8,1); 
 }
 
 void system_sleep() {
