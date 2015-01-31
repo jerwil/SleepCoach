@@ -43,7 +43,7 @@ int blink_time = 500;
 int blink_value = 254;
 
 int timeout = 0; // This is the timeout counter
-int timeout_setting = 60; // This is the setting for timeout in time_choose mode. If this is exceeded, the device will go to off mode
+int timeout_setting = 300; // This is the setting for timeout in time_choose mode. If this is exceeded, the device will go to off mode
 
 int brightness_mult = 9;    // how bright the LED is, start at half brightness
 int fadeAmount = 1;    // how many points to fade the LED by
@@ -154,7 +154,7 @@ button_pushed = button_press (button_state, button_press_initiate, button_press_
 if (mode == "time_choose"){
   
   if (clockwise == 1){if(brightness_mult + fadeAmount <= 25) brightness_mult += fadeAmount;}
-  if (counterclockwise == 1){if(brightness_mult - fadeAmount >= 2) brightness_mult -= fadeAmount;}
+  if (counterclockwise == 1){if(brightness_mult - fadeAmount >= 1) brightness_mult -= fadeAmount;}
   
 x = 0;
   
@@ -164,7 +164,7 @@ if (button_pushed == 1){
 profile += 1;
 button_pushed = 0;
 }
-if (profile > 4){
+if (profile > 2){
 profile = 0;
 mode = "off";
 }
@@ -178,10 +178,6 @@ if (button_state == 1){button_counter += 1;}
 
 if (button_state == 0){button_counter = 0;}
 
-if (tick(blink_time,blink_timer) == 1){
- if (blink == 1){blink = 0;}
- else if (blink == 0){blink = 1;}
-}
 
 if (button_state == 1){
 blink = 1;
@@ -190,23 +186,10 @@ timeout = 0;
 
 blink_value = max_brightness;
 
-if (blink == 0){  
-blink_value = 0;
-}
 
 analogWrite(LEDPin, blink_value);
 
 
-if (button_counter >= 3){ // If the user holds the button for 3 seconds, start the sleep coach
-button_pushed = 0;
-mode = "sleep_coach";
-button_counter = 0;
-
-total_time = profile_times_array[profile - 1];
-k_initial = k_values[profile-1];
-k_final = k_values[profile+3];
-
-}
 
 if (timeout >= timeout_setting){mode = "off";}
  
