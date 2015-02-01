@@ -17,7 +17,7 @@
 
 
 
-char* mode = "initialize"; // Modes are time_choose, sleep_coach, and off
+char* mode = "tens_digit_adjust"; // Default mode is "initialize"
 // Time choose mode is where the user choses between 7, 14, 21, and 28 minutes of sleep coaching
 // sleep coach mode is the mode with pulsating light
 // off is when the sleep coaching is complete. A button press will bring it into time choose mode
@@ -87,6 +87,9 @@ double current_time = 0;
 
 int button_press_initiate[1];     // storage for button press function
 int button_press_completed[1];    // storage for button press function
+
+int tens_digit = 0; // Tens digit used to choose session time
+int ones_digit = 7; // Ones digit used to choose session time
 
 
 void setup() {                
@@ -388,6 +391,33 @@ timeout = 0;
 
 }
 
+if (mode == "tens_digit_adjust"){
+  
+if (tick(1000,blink_timer) == 1){
+timeout += 1;
+if (button_state == 1){button_counter += 1;}
+}
+  
+if (counterclockwise == 1)
+  {if(tens_digit > 0) 
+    {tens_digit -= 1;
+     timeout = 0;}
+  }
+else if (clockwise == 1)
+  {if(tens_digit < 9) 
+    {tens_digit += 1;
+     timeout = 0;}
+  }
+
+if (button_pushed == 1){flash_led(LEDPin, tens_digit, 200);}
+
+if (timeout >= timeout_setting){
+mode = "off";
+timeout = 0;
+}
+
+}
+
 if (mode == "back_to_menu"){
   
 x = 0;  
@@ -449,7 +479,7 @@ timekeeper[0] = currentTime;
 }
 
 void flash_led(int pin, int times_to_flash, int wait_time){
-  int i = 0;
+  int i = 1;
   while (i <= times_to_flash){
   analogWrite(pin,244);
   delay(wait_time);               
