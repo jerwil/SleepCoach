@@ -17,7 +17,7 @@
 
 
 
-char* mode = "tens_digit_adjust"; // Default mode is "initialize"
+char* mode = "initialize"; // Default mode is "initialize"
 // Time choose mode is where the user choses between 7, 14, 21, and 28 minutes of sleep coaching
 // sleep coach mode is the mode with pulsating light
 // off is when the sleep coaching is complete. A button press will bring it into time choose mode
@@ -76,9 +76,7 @@ double k_values[8] = {.0054, .0054, .0054, .0054, .003, .0025, .0022, .0019}; //
 
 int blink_times_array[4] = {250,500,750,1000}; // The delay in blinking for the four profiles during profile selection
 
-int profile_times_array[4] = {420, 840, 1260, 1680};
-
-int eepromwrite = 200;
+int profile_times_array[8] = {0, 7, 1 , 4 , 2 , 1 , 2 , 8}; // Each profile is stored as two digits to ease adjustment and saving to EEPROM
 
 int val = 200; // Current value read from EEPROM
 
@@ -115,12 +113,16 @@ if (digitalRead(ButtonPin) == 1){
   flash_led(LEDPin, 10, 50);
 }
  
-else if (EEPROM.read(8) == 1){
+else if (EEPROM.read(25) == 1){
 
 for (int i = 0; i < 8; i++){
   val = EEPROM.read(i);
   k_values[i] = val;
   k_values[i] = k_values[i]/10000;
+}
+for (int i = 8; i <16; i++){
+  val = EEPROM.read(i);
+  profile_times_array[i-8] = val;
 }
 }
 
@@ -205,7 +207,7 @@ button_pushed = 0;
 mode = "sleep_coach";
 button_counter = 0;
 
-total_time = profile_times_array[profile - 1];
+total_time = (profile_times_array[profile*2-2]*10+profile_times_array[profile*2-1])*60;
 k_initial = k_values[profile-1];
 k_final = k_values[profile+3];
 
@@ -266,7 +268,7 @@ if (mode == "to_initial_adjust"){
   
   x = 0;
   button_pushed = 0;
-  flash_led(LEDPin, 5, 100);
+  flash_led(LEDPin, 3, 100);
   k = k_values[profile-1];
   mode = "initial_adjust";
 
@@ -327,8 +329,8 @@ x = 0;
 k_values[profile-1] = k;
 val = k*10000;
 EEPROM.write(profile-1,val);
-EEPROM.write(8, 1);  
-flash_led(LEDPin, 3, 100);
+EEPROM.write(25, 1);  
+flash_led(LEDPin, 5, 100);
 mode = "final_adjust";
 k = k_values[profile+3];
 
@@ -369,14 +371,14 @@ if (button_state == 0){button_counter = 0;}
 
 if (button_counter >= 3){ // If the user holds the button for 3 seconds, start the sleep coach
 button_pushed = 0;
-mode = "back_to_menu";
+mode = "to_tens_digit_adjust";
 button_counter = 0;
 timeout = 0;
 
 k_values[profile+3] = k;
 val = k*10000;
 EEPROM.write(profile+3,val);
-EEPROM.write(8, 1);
+EEPROM.write(25, 1);
 
 }
 
@@ -391,12 +393,21 @@ timeout = 0;
 
 }
 
+if (mode == "to_tens_digit_adjust"){
+tens_digit = profile_times_array[profile*2-2];
+mode = "tens_digit_adjust";
+pulse_led(LEDPin, 1);
+pulse_led(LEDPin, 1);
+}
+
 if (mode == "tens_digit_adjust"){
   
 if (tick(1000,blink_timer) == 1){
 timeout += 1;
 if (button_state == 1){button_counter += 1;}
 }
+
+if (button_state == 0){button_counter = 0;}
   
 if (counterclockwise == 1)
   {if(tens_digit > 0) 
@@ -409,11 +420,75 @@ else if (clockwise == 1)
      timeout = 0;}
   }
 
-if (button_pushed == 1){flash_led(LEDPin, tens_digit, 200);}
+if (button_pushed == 1 && tens_digit > 0){flash_led(LEDPin, tens_digit, 200);}
+else if (button_pushed == 1 && tens_digit == 0){pulse_led(LEDPin, 1);}
 
 if (timeout >= timeout_setting){
 mode = "off";
 timeout = 0;
+}
+
+if (button_counter >= 3){ // If the user holds the button for 3 seconds, start the sleep coach
+button_pushed = 0;
+mode = "to_ones_digit_adjust";
+button_counter = 0;
+timeout = 0;
+
+profile_times_array[profile*2-2] = tens_digit;
+EEPROM.write(profile*2+6,tens_digit);
+EEPROM.write(25, 1);
+
+}
+
+}
+
+if (mode == "to_ones_digit_adjust"){
+ones_digit = profile_times_array[profile*2-1];
+mode = "ones_digit_adjust";
+pulse_led(LEDPin, 1);
+pulse_led(LEDPin, 1);
+pulse_led(LEDPin, 1);
+button_counter = 0;
+}
+
+if (mode == "ones_digit_adjust"){
+  
+if (tick(1000,blink_timer) == 1){
+timeout += 1;
+if (button_state == 1){button_counter += 1;}
+}
+
+if (button_state == 0){button_counter = 0;}
+ 
+if (counterclockwise == 1)
+  {if(ones_digit > 0) 
+    {ones_digit -= 1;
+     timeout = 0;}
+  }
+else if (clockwise == 1)
+  {if(ones_digit < 9) 
+    {ones_digit += 1;
+     timeout = 0;}
+  }
+
+if (button_pushed == 1 && ones_digit > 0){flash_led(LEDPin, ones_digit, 200);}
+else if (button_pushed == 1 && ones_digit == 0){pulse_led(LEDPin, 1);}
+
+if (timeout >= timeout_setting){
+mode = "off";
+timeout = 0;
+}
+
+if (button_counter >= 3){ // If the user holds the button for 3 seconds, start the sleep coach
+button_pushed = 0;
+mode = "back_to_menu";
+button_counter = 0;
+timeout = 0;
+
+profile_times_array[profile*2-1] = ones_digit;
+EEPROM.write(profile*2+7,ones_digit);
+EEPROM.write(25, 1);
+
 }
 
 }
@@ -489,6 +564,20 @@ void flash_led(int pin, int times_to_flash, int wait_time){
   }
 }
 
+void pulse_led(int pin, int wait_time){
+  int i = 1;
+  while (i <= 255){
+  analogWrite(pin,i);
+  delay(wait_time);               
+  i++;
+  }
+  while (i >= 0){
+  analogWrite(pin,i);
+  delay(wait_time);               
+  i--;
+  }
+}
+
 
 void eeprom_reset(){
   for (int i = 0; i < 512; i++)
@@ -496,7 +585,10 @@ void eeprom_reset(){
   for (int i = 0; i < 8; i++){
   EEPROM.write(i,k_values[i]);
   }
-  EEPROM.write(8,1); 
+  for (int i = 8; i < 16; i++){
+  EEPROM.write(i,profile_times_array[i-8]);
+  }
+  EEPROM.write(25,1); 
 }
 
 void system_sleep() {
