@@ -26,8 +26,8 @@ char* mode = "initialize"; // Default mode is "initialize"
 int profile = 1;
 
 const int LEDPin = 0;
-const int pin_A = 3;  // pin 12
-const int pin_B = 4;  // pin 11
+const int pin_A = 4;  // Rotary Encoder Pin A
+const int pin_B = 3;  // Rotary Encoder Pin B
 const int ButtonPin = 1;
 
 unsigned char encoder_A;
@@ -77,6 +77,9 @@ double k_values[8] = {.0054, .0054, .0054, .0054, .003, .0025, .0022, .0019}; //
 int blink_times_array[4] = {250,500,750,1000}; // The delay in blinking for the four profiles during profile selection
 
 int profile_times_array[8] = {0, 7, 1 , 4 , 2 , 1 , 2 , 8}; // Each profile is stored as two digits to ease adjustment and saving to EEPROM
+
+// EEPROM is mapped as follows : {k1_initial, k2_initial, k3_initial, k4_initial, k1_final, k2_final, k3_final, k4_final, Profile 1 Duration Tens Digit, Profile 1 Duration Ones Digit, Profile 2 Duration Tens Digit, Profile 2 Duration Ones Digit, Profile 3 Duration Tens Digit, Profile 3 Duration Ones Digit, Profile 4 Duration Tens Digit, Profile 4 Duration Ones Digit}
+// EEPROM location 25 is used to see if program has written to EEPROM before. It will contain a value of 1 if this program has written to it, indicating that the rest of the EEPROM can be read.
 
 int val = 200; // Current value read from EEPROM
 
